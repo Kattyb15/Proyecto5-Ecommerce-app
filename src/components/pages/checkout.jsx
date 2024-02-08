@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PayPalButtons } from "@paypal/react-paypal-js";
+import { MercadoPagoButtons } from "@mercadopago/react-mercadopago-js";
 import toast from 'react-hot-toast';
 
 function Checkout() {
@@ -83,7 +83,7 @@ function Checkout() {
                                 </div>
                             </div>
                             <div className="text-end">
-                            <PayPalButtons
+                            <MercadoPagoButtons
                                     forceReRender={[total, 'USD', { layout: "vertical" }]}
                                     fundingSource={undefined}
                                     createOrder={(data, actions) => {
@@ -92,7 +92,7 @@ function Checkout() {
                                                 purchase_units: [
                                                     {
                                                         amount: {
-                                                            currency_code: "USD",
+                                                            currency_code: "MXN",
                                                             value: total,
                                                         },
                                                     },
